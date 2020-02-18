@@ -37,7 +37,6 @@ function hasVowels( $inputString ) {
     $vowels = new \Ds\Set(array( 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' ));
     $diff = $vowels->diff($inputStringSet);
     return !$diff->isEmpty();
-
 }
 
 require 'index-view.php';
