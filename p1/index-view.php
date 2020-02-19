@@ -18,10 +18,10 @@
 
     <?php if( isset( $results ) ) {?>
         <h2>Is palindrome?</h2>
-        <? echo $isPalindrome ?>
+        <?php echo $isPalindrome ?>
 
         <h2>Has vowels?</h2>
-        <? echo $hasVowels ?>
+        <?php echo $hasVowels ?>
     <?php } ?>
 
 </body>
