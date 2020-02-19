@@ -1,11 +1,6 @@
-*Any instructions/notes in italics should be removed from the template before submitting* 
-
 # Project 1
 + By: James Nicholson
-+ Production URL: <http://e15p1.yourdomain.com>
++ Production URL: <http://e15p1.nicholsonjf.me>
 
 ## Outside resources
-*your list of outside resources go here*
-
-## Notes for instructor
-*any notes for me to refer to while grading; if none, omit this section*
++ This SO question helped me debug a php syntax error: <https://stackoverflow.com/questions/9368841/php-code-gets-turned-into-html-comments>
