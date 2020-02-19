@@ -16,5 +16,5 @@ else {
 
 $_SESSION['results'] = $results;
 
-# Redirect
+// Redirect
 header('Location: index.php');
