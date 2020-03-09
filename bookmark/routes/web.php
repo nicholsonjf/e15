@@ -16,6 +16,12 @@ Route::get('/', function () {
     return 'Here for the books?';
 });
 
+Route::get('/abc', function () {
+    $foo = [1,2,3,4];
+    Log::info($foo);
+    return view('abc');
+});
+
 Route::get('/books', 'BookController@index');
 
 Route::get('/books/{title}', 'BookController@show');
