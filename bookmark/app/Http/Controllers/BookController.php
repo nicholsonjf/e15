@@ -24,7 +24,8 @@ class BookController extends Controller
             return 'duhhhh where is the book?';
         }
         else {
-            return 'Here is your book: ' . $title;
+            $bookFound = true;
+            return view('books.show')->with(['title' => $title, 'bookFound' => $bookFound]);
         }
     }
 }
