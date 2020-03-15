@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return 'Here for the books?';
+    return view('welcome');
 });
 
 Route::get('/abc', function () {

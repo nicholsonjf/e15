@@ -1,31 +1,18 @@
-<!doctype html>
-<html lang='en'>
-<head>
-    <title>{{ $title }}</title>
-    <meta charset='utf-8'>
-    <link href='/css/bookmark.css' type='text/css' rel='stylesheet'>
-</head>
-<body>
+@extends('layouts.master')
 
-    <header>
-        <a href='/'><img src='/images/bookmark-logo@2x.png' id='logo' alt='Bookmark Logo'></a>
-    </header>
+@section('title')
+    {{ $title }}
+@endsection
 
-    <section>
-        @if($bookFound)
-        <h1>{{ $title }}</h1>
+@section('head')
+    {{-- Page specific CSS includes should be defined here; this .css file does not exist yet, but we can create it --}}
+    <link href='/css/books/show.css' rel='stylesheet'>
+@endsection
 
-        <p>
-            Details about this book will go here...
-        </p>
-        @else
-        Book not found dude.
-        @endif
-    </section>
+@section('content')
+    <h1>{{ $title }}</h1>
 
-    <footer>
-        &copy; {{ date('Y') }}
-    </footer>
-
-</body>
-</html>
+    <p>
+        Details about this book will go here...
+    </p>
+@endsection

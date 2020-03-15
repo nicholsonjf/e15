@@ -12,7 +12,10 @@ class BookController extends Controller
     public function index()
     {
         # Work that was previously happening in the routes file is now happening here
-        return 'Here are all the books...';
+        return view('books.index')->with(['books' => [
+            ['title' => 'War and Peace'],
+            ['title' => 'Master and Margarita']
+        ]]);
     }
 
     /**

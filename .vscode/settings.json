@@ -1,3 +1,8 @@
 {
-    "blade.format.enable": true
+    "blade.format.enable": true,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#011B8C",
+        "titleBar.activeBackground": "#0125C3",
+        "titleBar.activeForeground": "#F9FAFF"
+    }
 }
