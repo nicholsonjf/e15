@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<form>
+<form action="{{ url('population/guess')  }}" method="GET">
     <div>
         <h3>Country</h3>
         <label for="country-select">Choose a country:</label>
@@ -15,12 +15,6 @@
                 <option value={{$population['country']}}>{{$population['country']}}</option>
             @endforeach
         </select>
-    </div>
-
-    <div>
-        <h3>Guess</h3>
-        <label for="guess">Guess the population:</label>
-        <input type="text" id="guess" name="guess">
     </div>
 
     <div>
@@ -36,6 +30,13 @@
         <input type="radio" id="difficulty25" name="difficulty" value="25">
         <label for="difficulty25">25%</label>
     </div>
+
+    <div>
+        <h3>Guess</h3>
+        <label for="guess">Guess the population:</label>
+        <input type="text" id="guess" name="guess">
+    </div>
+
     <div>
         <button type="submit">Submit</button>
     </div>
