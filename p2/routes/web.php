@@ -12,9 +12,5 @@
 */
 
 Route::get('/', function () {
-    return 'Versia A';
-});
-
-Route::get('/', function () {
-    return 'Versia B';
+    return view('welcome');
 });
