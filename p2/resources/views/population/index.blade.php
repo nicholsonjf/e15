@@ -70,4 +70,16 @@
     </div>
 </form>
 
+@if(!is_null($answered_correctly))
+    @if($answered_correctly == true)
+        <div class='results alert alert-primary'>
+            Correct!
+        </div>
+    @else
+        <div class='results alert alert-primary'>
+            Incorrect!
+        </div>
+    @endif
+@endif
+
 @endsection
