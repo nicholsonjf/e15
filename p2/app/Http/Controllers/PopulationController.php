@@ -25,6 +25,12 @@ class PopulationController extends Controller
 
     public function guess(Request $request)
     {
+        $request->validate([
+            'difficulty' => 'required',
+            'country' => 'required',
+            'guess' => 'required'
+        ]);
+        // Process request
         $difficulty = intval($request->input('difficulty'));
         $difficulty_constant = $difficulty / 100;
         $guess = intval($request->input('guess'));
