@@ -28,7 +28,7 @@ class PopulationController extends Controller
         $request->validate([
             'difficulty' => 'required',
             'country' => 'required',
-            'guess' => 'required'
+            'guess' => 'required|numeric|between:1,2000000000'
         ]);
         // Process request
         $difficulty = intval($request->input('difficulty'));
