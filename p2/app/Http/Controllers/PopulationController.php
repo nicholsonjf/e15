@@ -14,7 +14,7 @@ class PopulationController extends Controller
     {
         $populations_file = Storage::disk('local')->get('world-population-2019.json');
         $populations_data = json_decode($populations_file, true);
-        return view('population.index')->with([
+        return view('index')->with([
             'populations' => $populations_data,
             'difficulty' => session('difficulty', null),
             'country' => session('country', null),
@@ -39,7 +39,7 @@ class PopulationController extends Controller
         $populations_data = json_decode($populations_file, true);
         $actual_population = intval(str_replace(',', '', $populations_data[$request->input('country')]['population']));
         $answered_correctly = ($actual_population - $buffer) <= $guess && $guess <= ($actual_population + $buffer);
-        return redirect('/population')->with([
+        return redirect('/')->with([
             'difficulty' => $request->input('difficulty'),
             'guess' => $request->input('guess'),
             'country' => $request->input('country'),

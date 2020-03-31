@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/population', 'PopulationController@index');
+Route::get('/', 'PopulationController@index');
 
-Route::get('/population/guess', 'PopulationController@guess');
+Route::get('/guess', 'PopulationController@guess');

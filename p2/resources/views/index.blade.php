@@ -12,7 +12,7 @@
         @endforeach
     </ul>
 @endif
-<form action='/population/guess' method='GET'>
+<form action='/guess' method='GET'>
     <div class='row py-4'>
         <div class='col'>
             <h3>Country</h3>

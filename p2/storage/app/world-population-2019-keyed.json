@@ -1,0 +1,701 @@
+{
+   "China": {
+      "population": "1,433,783,686"
+   },
+   "India": {
+      "population": "1,366,417,754"
+   },
+   "United States": {
+      "population": "329,064,917"
+   },
+   "Indonesia": {
+      "population": "270,625,568"
+   },
+   "Pakistan": {
+      "population": "216,565,318"
+   },
+   "Brazil": {
+      "population": "211,049,527"
+   },
+   "Nigeria": {
+      "population": "200,963,599"
+   },
+   "Bangladesh": {
+      "population": "163,046,161"
+   },
+   "Russia": {
+      "population": "145,872,256"
+   },
+   "Mexico": {
+      "population": "127,575,529"
+   },
+   "Japan": {
+      "population": "126,860,301"
+   },
+   "Ethiopia": {
+      "population": "112,078,730"
+   },
+   "Philippines": {
+      "population": "108,116,615"
+   },
+   "Egypt": {
+      "population": "100,388,073"
+   },
+   "Vietnam": {
+      "population": "96,462,106"
+   },
+   "DR Congo": {
+      "population": "86,790,567"
+   },
+   "Germany": {
+      "population": "83,517,045"
+   },
+   "Turkey": {
+      "population": "83,429,615"
+   },
+   "Iran": {
+      "population": "82,913,906"
+   },
+   "Thailand": {
+      "population": "69,037,513"
+   },
+   "United Kingdom": {
+      "population": "67,530,172"
+   },
+   "France": {
+      "population": "65,129,728"
+   },
+   "Italy": {
+      "population": "60,550,075"
+   },
+   "South Africa": {
+      "population": "58,558,270"
+   },
+   "Tanzania": {
+      "population": "58,005,463"
+   },
+   "Myanmar": {
+      "population": "54,045,420"
+   },
+   "Kenya": {
+      "population": "52,573,973"
+   },
+   "South Korea": {
+      "population": "51,225,308"
+   },
+   "Colombia": {
+      "population": "50,339,443"
+   },
+   "Spain[d]": {
+      "population": "46,736,776"
+   },
+   "Argentina": {
+      "population": "44,780,677"
+   },
+   "Uganda": {
+      "population": "44,269,594"
+   },
+   "Ukraine": {
+      "population": "43,993,638"
+   },
+   "Algeria": {
+      "population": "43,053,054"
+   },
+   "Sudan": {
+      "population": "42,813,238"
+   },
+   "Iraq": {
+      "population": "39,309,783"
+   },
+   "Afghanistan": {
+      "population": "38,041,754"
+   },
+   "Poland": {
+      "population": "37,887,768"
+   },
+   "Canada": {
+      "population": "37,411,047"
+   },
+   "Morocco": {
+      "population": "36,471,769"
+   },
+   "Saudi Arabia": {
+      "population": "34,268,528"
+   },
+   "Uzbekistan": {
+      "population": "32,981,716"
+   },
+   "Peru": {
+      "population": "32,510,453"
+   },
+   "Malaysia": {
+      "population": "31,949,777"
+   },
+   "Angola": {
+      "population": "31,825,295"
+   },
+   "Mozambique": {
+      "population": "30,366,036"
+   },
+   "Yemen": {
+      "population": "29,161,922"
+   },
+   "Ghana": {
+      "population": "28,833,629"
+   },
+   "Nepal": {
+      "population": "28,608,710"
+   },
+   "Venezuela": {
+      "population": "28,515,829"
+   },
+   "Madagascar": {
+      "population": "26,969,307"
+   },
+   "North Korea": {
+      "population": "25,666,161"
+   },
+   "Ivory Coast": {
+      "population": "25,716,544"
+   },
+   "Cameroon": {
+      "population": "25,876,380"
+   },
+   "Australia": {
+      "population": "25,203,198"
+   },
+   "Taiwan": {
+      "population": "23,773,876"
+   },
+   "Niger": {
+      "population": "23,310,715"
+   },
+   "Sri Lanka": {
+      "population": "21,323,733"
+   },
+   "Burkina Faso": {
+      "population": "20,321,378"
+   },
+   "Mali": {
+      "population": "19,658,031"
+   },
+   "Romania": {
+      "population": "19,364,557"
+   },
+   "Malawi": {
+      "population": "18,628,747"
+   },
+   "Chile": {
+      "population": "18,952,038"
+   },
+   "Kazakhstan": {
+      "population": "18,551,427"
+   },
+   "Zambia": {
+      "population": "17,861,030"
+   },
+   "Guatemala": {
+      "population": "17,581,472"
+   },
+   "Ecuador": {
+      "population": "17,373,662"
+   },
+   "Netherlands": {
+      "population": "17,097,130"
+   },
+   "Syria": {
+      "population": "17,070,135"
+   },
+   "Cambodia": {
+      "population": "16,486,542"
+   },
+   "Senegal": {
+      "population": "16,296,364"
+   },
+   "Chad": {
+      "population": "15,946,876"
+   },
+   "Somalia": {
+      "population": "15,442,905"
+   },
+   "Zimbabwe": {
+      "population": "14,645,468"
+   },
+   "Guinea": {
+      "population": "12,771,246"
+   },
+   "Rwanda": {
+      "population": "12,626,950"
+   },
+   "Benin": {
+      "population": "11,801,151"
+   },
+   "Tunisia": {
+      "population": "11,694,719"
+   },
+   "Belgium": {
+      "population": "11,539,328"
+   },
+   "Bolivia": {
+      "population": "11,513,100"
+   },
+   "Cuba": {
+      "population": "11,333,483"
+   },
+   "Haiti": {
+      "population": "11,263,770"
+   },
+   "South Sudan": {
+      "population": "11,062,113"
+   },
+   "Burundi": {
+      "population": "10,864,245"
+   },
+   "Dominican Republic": {
+      "population": "10,738,958"
+   },
+   "Czech Republic": {
+      "population": "10,689,209"
+   },
+   "Greece": {
+      "population": "10,473,455"
+   },
+   "Portugal": {
+      "population": "10,226,187"
+   },
+   "Jordan": {
+      "population": "10,101,694"
+   },
+   "Azerbaijan": {
+      "population": "10,047,718"
+   },
+   "Sweden": {
+      "population": "10,036,379"
+   },
+   "United Arab Emirates": {
+      "population": "9,770,529"
+   },
+   "Honduras": {
+      "population": "9,746,117"
+   },
+   "Hungary": {
+      "population": "9,684,679"
+   },
+   "Belarus": {
+      "population": "9,452,411"
+   },
+   "Tajikistan": {
+      "population": "9,321,018"
+   },
+   "Austria": {
+      "population": "8,955,102"
+   },
+   "Papua New Guinea": {
+      "population": "8,776,109"
+   },
+   "Serbia": {
+      "population": "8,772,235"
+   },
+   "Switzerland": {
+      "population": "8,591,365"
+   },
+   "Israel": {
+      "population": "8,519,377"
+   },
+   "Togo": {
+      "population": "8,082,366"
+   },
+   "Sierra Leone": {
+      "population": "7,813,215"
+   },
+   "Hong Kong": {
+      "population": "7,436,154"
+   },
+   "Laos": {
+      "population": "7,169,455"
+   },
+   "Paraguay": {
+      "population": "7,044,636"
+   },
+   "Bulgaria": {
+      "population": "7,000,119"
+   },
+   "Lebanon": {
+      "population": "6,855,713"
+   },
+   "Libya": {
+      "population": "6,777,452"
+   },
+   "Nicaragua": {
+      "population": "6,545,502"
+   },
+   "El Salvador": {
+      "population": "6,453,553"
+   },
+   "Kyrgyzstan": {
+      "population": "6,415,850"
+   },
+   "Turkmenistan": {
+      "population": "5,942,089"
+   },
+   "Singapore": {
+      "population": "5,804,337"
+   },
+   "Denmark": {
+      "population": "5,771,876"
+   },
+   "Finland": {
+      "population": "5,532,156"
+   },
+   "Slovakia": {
+      "population": "5,457,013"
+   },
+   "Congo": {
+      "population": "5,380,508"
+   },
+   "Norway": {
+      "population": "5,378,857"
+   },
+   "Costa Rica": {
+      "population": "5,047,561"
+   },
+   "Palestine": {
+      "population": "4,981,420"
+   },
+   "Oman": {
+      "population": "4,974,986"
+   },
+   "Liberia": {
+      "population": "4,937,374"
+   },
+   "Ireland": {
+      "population": "4,882,495"
+   },
+   "New Zealand": {
+      "population": "4,783,063"
+   },
+   "Central African Republic": {
+      "population": "4,745,185"
+   },
+   "Mauritania": {
+      "population": "4,525,696"
+   },
+   "Panama": {
+      "population": "4,246,439"
+   },
+   "Kuwait": {
+      "population": "4,207,083"
+   },
+   "Croatia": {
+      "population": "4,130,304"
+   },
+   "Moldova": {
+      "population": "4,043,263"
+   },
+   "Georgia": {
+      "population": "3,996,765"
+   },
+   "Eritrea": {
+      "population": "3,497,117"
+   },
+   "Uruguay": {
+      "population": "3,461,734"
+   },
+   "Bosnia and Herzegovina": {
+      "population": "3,301,000"
+   },
+   "Mongolia": {
+      "population": "3,225,167"
+   },
+   "Armenia": {
+      "population": "2,957,731"
+   },
+   "Jamaica": {
+      "population": "2,948,279"
+   },
+   "Puerto Rico": {
+      "population": "2,933,408"
+   },
+   "Albania": {
+      "population": "2,880,917"
+   },
+   "Qatar": {
+      "population": "2,832,067"
+   },
+   "Lithuania": {
+      "population": "2,759,627"
+   },
+   "Namibia": {
+      "population": "2,494,530"
+   },
+   "Gambia": {
+      "population": "2,347,706"
+   },
+   "Botswana": {
+      "population": "2,303,697"
+   },
+   "Gabon": {
+      "population": "2,172,579"
+   },
+   "Lesotho": {
+      "population": "2,125,268"
+   },
+   "North Macedonia": {
+      "population": "2,083,459"
+   },
+   "Slovenia": {
+      "population": "2,078,654"
+   },
+   "Guinea-Bissau": {
+      "population": "1,920,922"
+   },
+   "Latvia": {
+      "population": "1,906,743"
+   },
+   "Bahrain": {
+      "population": "1,641,172"
+   },
+   "Trinidad and Tobago": {
+      "population": "1,394,973"
+   },
+   "Equatorial Guinea": {
+      "population": "1,355,986"
+   },
+   "Estonia": {
+      "population": "1,325,648"
+   },
+   "East Timor": {
+      "population": "1,293,119"
+   },
+   "Mauritius": {
+      "population": "1,198,575"
+   },
+   "Cyprus": {
+      "population": "1,179,551"
+   },
+   "Eswatini": {
+      "population": "1,148,130"
+   },
+   "Djibouti": {
+      "population": "973,560"
+   },
+   "Fiji": {
+      "population": "889,953"
+   },
+   "Réunion": {
+      "population": "888,927"
+   },
+   "Comoros": {
+      "population": "850,886"
+   },
+   "Guyana": {
+      "population": "782,766"
+   },
+   "Bhutan": {
+      "population": "763,092"
+   },
+   "Solomon Islands": {
+      "population": "669,823"
+   },
+   "Macau": {
+      "population": "640,445"
+   },
+   "Montenegro": {
+      "population": "627,987"
+   },
+   "Luxembourg": {
+      "population": "615,729"
+   },
+   "Western Sahara": {
+      "population": "582,463"
+   },
+   "Suriname": {
+      "population": "581,372"
+   },
+   "Cape Verde": {
+      "population": "549,935"
+   },
+   "Maldives": {
+      "population": "530,953"
+   },
+   "Guadeloupe": {
+      "population": "447,905"
+   },
+   "Malta": {
+      "population": "440,372"
+   },
+   "Brunei": {
+      "population": "433,285"
+   },
+   "Belize": {
+      "population": "390,353"
+   },
+   "Bahamas": {
+      "population": "389,482"
+   },
+   "Martinique": {
+      "population": "375,554"
+   },
+   "Iceland": {
+      "population": "339,031"
+   },
+   "Vanuatu": {
+      "population": "299,882"
+   },
+   "Barbados": {
+      "population": "287,025"
+   },
+   "New Caledonia": {
+      "population": "282,750"
+   },
+   "French Guiana": {
+      "population": "282,731"
+   },
+   "French Polynesia": {
+      "population": "279,287"
+   },
+   "Mayotte": {
+      "population": "266,150"
+   },
+   "São Tomé and Príncipe": {
+      "population": "215,056"
+   },
+   "Samoa": {
+      "population": "197,097"
+   },
+   "Saint Lucia": {
+      "population": "182,790"
+   },
+   "Guernsey and  Jersey": {
+      "population": "172,259"
+   },
+   "Guam": {
+      "population": "167,294"
+   },
+   "Curaçao": {
+      "population": "163,424"
+   },
+   "Kiribati": {
+      "population": "117,606"
+   },
+   "F.S. Micronesia": {
+      "population": "113,815"
+   },
+   "Grenada": {
+      "population": "112,003"
+   },
+   "Tonga": {
+      "population": "110,940"
+   },
+   "Saint Vincent and the Grenadines": {
+      "population": "110,589"
+   },
+   "Aruba": {
+      "population": "106,314"
+   },
+   "U.S. Virgin Islands": {
+      "population": "104,578"
+   },
+   "Seychelles": {
+      "population": "97,739"
+   },
+   "Antigua and Barbuda": {
+      "population": "97,118"
+   },
+   "Isle of Man": {
+      "population": "84,584"
+   },
+   "Andorra": {
+      "population": "77,142"
+   },
+   "Dominica": {
+      "population": "71,808"
+   },
+   "Cayman Islands": {
+      "population": "64,948"
+   },
+   "Bermuda": {
+      "population": "62,506"
+   },
+   "Marshall Islands": {
+      "population": "58,791"
+   },
+   "Greenland": {
+      "population": "56,672"
+   },
+   "Northern Mariana Islands": {
+      "population": "56,188"
+   },
+   "American Samoa": {
+      "population": "55,312"
+   },
+   "Saint Kitts and Nevis": {
+      "population": "52,823"
+   },
+   "Faroe Islands": {
+      "population": "48,678"
+   },
+   "Sint Maarten": {
+      "population": "42,388"
+   },
+   "Monaco": {
+      "population": "38,964"
+   },
+   "Turks and Caicos Islands": {
+      "population": "38,191"
+   },
+   "Liechtenstein": {
+      "population": "38,019"
+   },
+   "San Marino": {
+      "population": "33,860"
+   },
+   "Gibraltar": {
+      "population": "33,701"
+   },
+   "British Virgin Islands": {
+      "population": "30,030"
+   },
+   "Caribbean Netherlands": {
+      "population": "25,979"
+   },
+   "Palau": {
+      "population": "18,008"
+   },
+   "Cook Islands": {
+      "population": "17,548"
+   },
+   "Anguilla": {
+      "population": "14,869"
+   },
+   "Tuvalu": {
+      "population": "11,646"
+   },
+   "Wallis and Futuna": {
+      "population": "11,432"
+   },
+   "Nauru": {
+      "population": "10,756"
+   },
+   "Saint Helena, Ascension and Tristan da Cunha": {
+      "population": "6,059"
+   },
+   "Saint Pierre and Miquelon": {
+      "population": "5,822"
+   },
+   "Montserrat": {
+      "population": "4,989"
+   },
+   "Falkland Islands": {
+      "population": "3,377"
+   },
+   "Niue": {
+      "population": "1,615"
+   },
+   "Tokelau": {
+      "population": "1,340"
+   },
+   "Vatican City": {
+      "population": "799"
+   }
+}

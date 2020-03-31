@@ -1,3 +1,7 @@
 *
 !public/
 !.gitignore
+
+# Population! files
+!world-population-2019-keyed.json
+!world-population-2019.json
