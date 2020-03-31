@@ -16,7 +16,7 @@
             <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
                 <h1>The Population Game!</h1>
                 <header>
-                    <a href='/'><img src='/images/world.jpg' id='logo' alt='Population Logo' class='rounded-sm'></a>
+                    <a href='/'><img src='/images/geo-world.jpg' id='logo' alt='Population Logo' class='rounded-sm'></a>
                 </header>
 
                 <section>
