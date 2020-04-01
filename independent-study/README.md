@@ -28,3 +28,11 @@
 
 
 ### Viewing and analyzing your logs on CloudWatch
+
+
+### Sources
+
+1. AWS CloudWatch Online Docs: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
+2. Pete Freitag blog post: https://www.petefreitag.com/item/868.cfm
+
+![cloudwatch-dashboard] (images/cloudwatch-dashboard.png)
