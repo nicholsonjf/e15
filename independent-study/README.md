@@ -1,6 +1,7 @@
 # Wrangling your Laravel Logs with AWS CloudWatch
 *By James Nicholson*
 
+![cloudwatch-dashboard](images/cloudwatch-dashboard.png)
 
 ### Introduction
 
@@ -34,5 +35,3 @@
 
 1. AWS CloudWatch Online Docs: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 2. Pete Freitag blog post: https://www.petefreitag.com/item/868.cfm
-
-![cloudwatch-dashboard] (images/cloudwatch-dashboard.png)
