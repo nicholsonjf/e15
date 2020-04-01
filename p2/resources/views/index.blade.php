@@ -6,8 +6,8 @@
 
 @section('content')
 @if(count($errors) > 0)
-    <div class='row'>
-        <div class='col-6 pl-3 ml-3 mt-4 alert alert-danger'>
+    <div class='row mr-4'>
+        <div class='col-10 pl-3 ml-3 mt-4 alert alert-danger'>
             ATTENTION:
             <ul class='mb-0'>
                 @foreach ($errors->all() as $error)
