@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-'Population Guesser'
+'The Population Game!'
 @endsection
 
 @section('content')
