@@ -12,16 +12,18 @@ class PopulationController extends Controller
     */
     public function index()
     {
-        $populations_file = Storage::disk('local')->get('world-population-2019.json');
+        $populations_file = Storage::disk('local')->get('world-population-2019-keyed.json');
         $populations_data = json_decode($populations_file, true);
+        ksort($populations_data);
+        $country_names_sorted = array_keys($populations_data);
         return view('index')->with([
-            'populations' => $populations_data,
+            'country_names_sorted' => $country_names_sorted,
             'difficulty' => session('difficulty', null),
-            'country' => session('country', null),
+            'country_choice' => session('country_choice', null),
             'guess' => session('guess', null),
             'answered_correctly' => session('answered_correctly', null),
             'actual_population' => session('actual_population', null),
-            'buffer' => session('buffer', null)
+            'allowed_difference' => session('allowed_difference', null)
             ]);
     }
 
@@ -29,24 +31,25 @@ class PopulationController extends Controller
     {
         $request->validate([
             'difficulty' => 'required',
-            'country' => 'required',
+            'country_choice' => 'required',
             'guess' => 'required|numeric|between:1,2000000000'
         ]);
         // Process request
         $difficulty = intval($request->input('difficulty'));
         $difficulty_constant = $difficulty / 100;
         $guess = intval($request->input('guess'));
-        $buffer = $guess * $difficulty_constant;
         $populations_file = Storage::disk('local')->get('world-population-2019-keyed.json');
         $populations_data = json_decode($populations_file, true);
-        $actual_population = intval(str_replace(',', '', $populations_data[$request->input('country')]['population']));
-        $answered_correctly = ($actual_population - $buffer) <= $guess && $guess <= ($actual_population + $buffer);
+        $actual_population = intval(str_replace(',', '', $populations_data[$request->input('country_choice')]['population']));
+        $allowed_difference = $actual_population * $difficulty_constant;
+        $guess_difference = abs($actual_population - $guess);
+        $answered_correctly = $guess_difference <= $allowed_difference;
         return redirect('/' . '#results')->with([
             'difficulty' => $request->input('difficulty'),
             'guess' => $request->input('guess'),
-            'country' => $request->input('country'),
+            'country_choice' => $request->input('country_choice'),
             'actual_population' => $actual_population,
-            'buffer' => $buffer,
+            'allowed_difference' => $allowed_difference,
             'answered_correctly' => $answered_correctly
         ]);
     }

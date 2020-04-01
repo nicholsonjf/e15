@@ -23,14 +23,14 @@
             <h3>Country</h3>
             <div class='form-group'>
                 <label for='country-select'>Choose a country:</label>
-                <select name='country' id='country-select' class='form-control'>
+                <select name='country_choice' id='country-select' class='form-control'>
                     <option value=''>--Please choose an option--</option>
-                    @foreach($populations as $population)
+                    @foreach($country_names_sorted as $country_name)
                         <option
-                            value='{{ trim($population['country']) }}'
-                            {{ ($country == trim($population['country']) ) ? ' selected' : '' }}
+                            value='{{ $country_name }}'
+                            {{ $country_choice == $country_name ? ' selected' : '' }}
                         >
-                            {{ $population['country'] }}
+                            {{ $country_name }}
                         </option>
                     @endforeach
                 </select>
@@ -110,11 +110,11 @@
     <div id='results'>
     @if($answered_correctly == true)
         <div class='results alert alert-success'>
-            Correct! Your guess was within {{strval($difficulty) . '%'}} of {{$actual_population}}, the current population of {{$country}}.
+            Correct! Your guess was within {{strval($difficulty) . '%'}} ({{$allowed_difference}}) of {{$actual_population}}, the current population of {{$country_choice}}.
         </div>
     @else
         <div class='results alert alert-danger'>
-            Incorrect! Your guess was not within {{strval($difficulty) . '%'}} of the current population of {{$country}}.
+            Incorrect! Your guess was not within {{strval($difficulty) . '%'}} ({{$allowed_difference}}) of the current population of {{$country_choice}}.
         </div>
     @endif
     </div>
