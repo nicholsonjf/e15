@@ -18,11 +18,11 @@
     </div>
 @endif
 <form action='/guess' method='GET'>
-    <div class='row py-4'>
+    <div class='row pt-4 pb-2'>
         <div class='col'>
             <h3>Country</h3>
             <div class='form-group'>
-                <label for='country-select'>Choose a country:</label>
+                <p class='mb-2'>Choose the country you want to guess the population of.</p>
                 <select name='country_choice' id='country-select' class='form-control'>
                     <option value=''>--Please choose an option--</option>
                     @foreach($country_names_sorted as $country_name)
@@ -43,7 +43,7 @@
             <h3>Difficulty Level</h3>
             <div class='pb-2'>
                 <p class='mb-n1'>Set your difficulty.</p>
-                <small id="difficultyHelp">
+                <small class='text-muted'>
                     Hard = within 5%, Medium = within 10%, and Easy = within 25%
                 </small>
             </div>
@@ -87,14 +87,20 @@
         <div class='col'>
             <div class='form-group'>
                 <h3>Your Guess</h3>
-                <label for='guess'>Guess the population:</label>
-                <input
-                    class='form-control'
-                    type='text'
-                    id='guess'
-                    name='guess'
-                    value='{{ $guess }}'
-                >
+                <p class='mb-n1'>Guess the population:</p>
+                <small class='text-muted'>
+                    Your guess can only contain numbers.
+                </small>
+                <div class='row pt-3 pl-3'>
+                    <input
+                        class='form-control'
+                        placeholder='e.g. 25000000'
+                        type='text'
+                        id='guess'
+                        name='guess'
+                        value='{{ $guess }}'
+                    >
+                </div>
             </div>
         </div>
     </div>
