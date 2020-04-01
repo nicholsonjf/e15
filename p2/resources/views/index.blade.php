@@ -6,11 +6,16 @@
 
 @section('content')
 @if(count($errors) > 0)
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
+    <div class='row'>
+        <div class='col-6 pl-3 ml-3 mt-4 alert alert-danger'>
+            ATTENTION:
+            <ul class='mb-0'>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
 @endif
 <form action='/guess' method='GET'>
     <div class='row py-4'>
@@ -36,17 +41,22 @@
     <div class='row pb-4'>
         <div class='col'>
             <h3>Difficulty Level</h3>
-            <p>Set your difficulty. If you select "Hard", your guess must be within 5% of that country's population, and so on...</p>
+            <div class='pb-2'>
+                <p class='mb-n1'>Set your difficulty.</p>
+                <small id="difficultyHelp">
+                    Hard = within 5%, Medium = within 10%, and Easy = within 25%
+                </small>
+            </div>
             <div class='form-check'>
                 <input
                     class='form-check-input'
                     type='radio'
-                    id='difficulty5'
+                    id='difficulty25'
                     name='difficulty'
-                    value='5'
-                    {{ $difficulty == '5' || is_null($difficulty) ? ' checked' : ''}}
+                    value='25'
+                    {{ $difficulty == '25' || is_null($difficulty) ? ' checked' : ''}}
                 >
-                <label for='difficulty5' class='form-check-label'>Hard</label>
+                <label for='difficulty25' class='form-check-label'>Easy</label>
             </div>
             <div class='form-check'>
                 <input
@@ -63,12 +73,12 @@
                 <input
                     class='form-check-input'
                     type='radio'
-                    id='difficulty25'
+                    id='difficulty5'
                     name='difficulty'
-                    value='25'
-                    {{ $difficulty == '25' ? ' checked' : ''}}
+                    value='5'
+                    {{ $difficulty == '5' ? ' checked' : ''}}
                 >
-                <label for='difficulty25' class='form-check-label'>Easy</label>
+                <label for='difficulty5' class='form-check-label'>Hard</label>
             </div>
         </div>
     </div>
@@ -97,15 +107,17 @@
 </form>
 
 @if(!is_null($answered_correctly))
+    <div id='results'>
     @if($answered_correctly == true)
         <div class='results alert alert-success'>
-            Correct!
+            Correct! Your guess was within {{strval($difficulty) . '%'}} of {{$actual_population}}, the current population of {{$country}}.
         </div>
     @else
         <div class='results alert alert-danger'>
-            Incorrect!
+            Incorrect! Your guess was not within {{strval($difficulty) . '%'}} of the current population of {{$country}}.
         </div>
     @endif
+    </div>
 @endif
 
 @endsection

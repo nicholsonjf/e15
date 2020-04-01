@@ -19,7 +19,9 @@ class PopulationController extends Controller
             'difficulty' => session('difficulty', null),
             'country' => session('country', null),
             'guess' => session('guess', null),
-            'answered_correctly' => session('answered_correctly', null)
+            'answered_correctly' => session('answered_correctly', null),
+            'actual_population' => session('actual_population', null),
+            'buffer' => session('buffer', null)
             ]);
     }
 
@@ -39,10 +41,12 @@ class PopulationController extends Controller
         $populations_data = json_decode($populations_file, true);
         $actual_population = intval(str_replace(',', '', $populations_data[$request->input('country')]['population']));
         $answered_correctly = ($actual_population - $buffer) <= $guess && $guess <= ($actual_population + $buffer);
-        return redirect('/')->with([
+        return redirect('/' . '#results')->with([
             'difficulty' => $request->input('difficulty'),
             'guess' => $request->input('guess'),
             'country' => $request->input('country'),
+            'actual_population' => $actual_population,
+            'buffer' => $buffer,
             'answered_correctly' => $answered_correctly
         ]);
     }
