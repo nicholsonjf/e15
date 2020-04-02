@@ -14,8 +14,16 @@
         <div class="row flex-xl-nowrap">
             <div class="col-12 col-md-3 col-xl-2 bd-sidebar"></div>
             <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-                <h1>The Population Game!</h1>
-                <header>
+                <div class='row mb-n2 ml-0'>
+                    <h1>The Population Game!</h1>
+                </div>
+                <small class='text-muted'>
+                        Developed by:
+                            <a href='https://github.com/nicholsonjf' class='text-secondary'>
+                                <u>James Nicholson</u>
+                            </a>
+                </small>
+                <header class='pt-4'>
                     <a href='/'><img src='/images/geo-world.jpg' id='logo' alt='Population Logo' class='img-fluid rounded-sm'></a>
                 </header>
 
