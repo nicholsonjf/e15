@@ -16,11 +16,11 @@ class CreateCollectionItemsTable extends Migration
         Schema::create('collection_items', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreign('item_id')
-                ->references('id')->on('items')
+            $table->foreignId('item_id')
+                ->constrained('items')
                 ->onDelete('cascade');
-            $table->foreign('collection_id')
-                ->references('id')->on('collections')
+            $table->foreignId('collection_id')
+                ->constrained('collections')
                 ->onDelete('cascade');
         });
     }

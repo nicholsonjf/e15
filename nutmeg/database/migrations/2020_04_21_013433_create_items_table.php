@@ -17,8 +17,11 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name')->unique();
+            $table->bigInteger('department_id')
+                ->unsigned();
             $table->foreign('department_id')
-                ->references('id')->on('departments')
+                ->references('id')
+                ->on('departments')
                 ->onDelete('set null');
         });
     }
