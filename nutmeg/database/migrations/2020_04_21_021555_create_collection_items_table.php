@@ -16,11 +16,15 @@ class CreateCollectionItemsTable extends Migration
         Schema::create('collection_items', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('item_id')
-                ->constrained('items')
+            $table->unsignedBigInteger('item_id');
+            $table->foreign('item_id')
+                ->references('id')
+                ->on('items')
                 ->onDelete('cascade');
-            $table->foreignId('collection_id')
-                ->constrained('collections')
+            $table->unsignedBigInteger('collection_id');
+            $table->foreign('collection_id')
+                ->references('id')
+                ->on('collections')
                 ->onDelete('cascade');
         });
     }
