@@ -16,8 +16,8 @@ file that will shed light on your issue. This is where logging analytics platfor
 Amazon Cloudwatch is a powerful logging and monitoring analytics platform. Here's a description of it's capabilities
 from Amazon's website:
 
->CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified >view of AWS resources, applications, and services that run on AWS and on-premises servers. You can use CloudWatch to detect >anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, >troubleshoot issues, and discover insights to keep your applications
->running smoothly.
+>CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS and on-premises servers. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications
+running smoothly.
 
 Don't be confused by the mention of "services that run on AWS and on-premises servers". CloudWatch is also compatible
 with other cloud computing providers, such as DigitalOcean.
