@@ -45,9 +45,11 @@ going to focus on a few important log files for this stack:
 `/var/log/syslog`
 
 
-## Create the Necessarry AWS IAM Users and Roles
+## Create the AWS IAM User
 
-Follow the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html) on how to setup your users and roles.
+1. Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
+2. In the navigation pane, choose Users, and then choose Add user.
+<img src="images/iam.users.png" width="500"/>
 
 ## Install and Configure the CloudWatch Agent on Ubuntu 18.04
 
