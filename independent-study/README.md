@@ -84,12 +84,185 @@ going to focus on a few important log files for this stack:
 correctly see [this Amazon documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-cloudwatch-agent-configuration-file-wizard.html). When it asks if you want to add log files, use the URLs above.  
 `/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard`
 
+Here's all my answers to the configuration wizard in case you want to compare:
+
+```shell
+root@e15:/opt/aws/amazon-cloudwatch-agent/bin# /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+=============================================================
+= Welcome to the AWS CloudWatch Agent Configuration Manager =
+=============================================================
+On which OS are you planning to use the agent?
+1. linux
+2. windows
+default choice: [1]:
+1
+Trying to fetch the default region based on ec2 metadata...
+Are you using EC2 or On-Premises hosts?
+1. EC2
+2. On-Premises
+2
+Please make sure the credentials and region set correctly on your hosts.
+Refer to http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
+Which user are you planning to run the agent?
+1. root
+2. cwagent
+3. others
+default choice: [1]:
+1
+Do you want to turn on StatsD daemon?
+1. yes
+2. no
+default choice: [1]:
+2
+Do you want to monitor metrics from CollectD?
+1. yes
+2. no
+default choice: [1]:
+2
+Do you want to monitor any host metrics? e.g. CPU, memory, etc.
+1. yes
+2. no
+default choice: [1]:
+2
+Do you have any existing CloudWatch Log Agent (http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) configuration file to import for migration?
+1. yes
+2. no
+default choice: [2]:
+2
+Do you want to monitor any log files?
+1. yes
+2. no
+default choice: [1]:
+1
+Log file path:
+/var/www/html/e15/nutmeg/storage/logs/laravel.log
+Log group name:
+default choice: [laravel.log]
+Laravel
+Log stream name:
+default choice: [{hostname}]
+
+Do you want to specify any additional log files to monitor?
+1. yes
+2. no
+default choice: [1]:
+1
+Log file path:
+/var/log/mysql/error.log
+Log group name:
+default choice: [error.log]
+Mysql
+Log stream name:
+default choice: [{hostname}]
+
+Do you want to specify any additional log files to monitor?
+1. yes
+2. no
+default choice: [1]:
+1
+Log file path:
+/var/log/apache2/error.log
+Log group name:
+default choice: [error.log]
+Apache
+Log stream name:
+default choice: [{hostname}]
+
+Do you want to specify any additional log files to monitor?
+1. yes
+2. no
+default choice: [1]:
+1
+Log file path:
+/var/log/syslog
+Log group name:
+default choice: [syslog]
+Ubuntu
+Log stream name:
+default choice: [{hostname}]
+
+Do you want to specify any additional log files to monitor?
+1. yes
+2. no
+default choice: [1]:
+2
+Saved config file to /opt/aws/amazon-cloudwatch-agent/bin/config.json successfully.
+Current config as follows:
+{
+	"agent": {
+		"run_as_user": "root"
+	},
+	"logs": {
+		"logs_collected": {
+			"files": {
+				"collect_list": [
+					{
+						"file_path": "/var/www/html/e15/nutmeg/storage/logs/laravel.log",
+						"log_group_name": "Laravel",
+						"log_stream_name": "{hostname}"
+					},
+					{
+						"file_path": "/var/log/mysql/error.log",
+						"log_group_name": "Mysql",
+						"log_stream_name": "{hostname}"
+					},
+					{
+						"file_path": "/var/log/apache2/error.log",
+						"log_group_name": "Apache",
+						"log_stream_name": "{hostname}"
+					},
+					{
+						"file_path": "/var/log/syslog",
+						"log_group_name": "Ubuntu",
+						"log_stream_name": "{hostname}"
+					}
+				]
+			}
+		}
+	}
+}
+Please check the above content of the config.
+The config file is also located at /opt/aws/amazon-cloudwatch-agent/bin/config.json.
+Edit it manually if needed.
+Do you want to store the config in the SSM parameter store?
+1. yes
+2. no
+default choice: [1]:
+2
+Program exits now.
+```
+
+6. Create the AmazonCloudWatchAgent profile for the CloudWatch agent.
+
+```aws configure --profile AmazonCloudWatchAgent```
+
+Here's all my answers from the profile wizard in case you want to compare answers (I had already created my profile
+before capturing this output, which is why you're seeing my obfuscated ID and Key).
+
+```shell
+root@e15:/opt/aws/amazon-cloudwatch-agent/bin# aws configure --profile AmazonCloudWatchAgent
+AWS Access Key ID [****************2LIA]:
+AWS Secret Access Key [****************LlSe]:
+Default region name ["us-east-1"]: us-east-2
+Default output format [json]:
+root@e15:/opt/aws/amazon-cloudwatch-agent/bin#
+```
+<br>**Important:** You need to enter the correct default region that your AWS account uses. See the below screenshot
+for where to find that info.
+
+<br><img src="images/aws.region.png" width="600"/>
+
 
 ## Start the CloudWatch service
 
 `/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m onPremise -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s`
 
 You should now be able to visit your CloudWatch console and view the logs you setup above.
+
+<br><img src="images/aws.cloudwatch.png" width="600"/>
+
+For more information on configuration and usage, refer to the official CloudWatch documentation:
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 
 
 ## Sources
