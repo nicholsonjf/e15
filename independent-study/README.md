@@ -3,6 +3,12 @@
 
 <img src="images/cloudwatch-dashboard2.png" width="800"/>
 
+## Requirements
+
+1. An Ubuntu server (preferably v18.04 but may work with earlier verisions) with an IP address reachable from the internet.
+2. An AWS account. This will require setting up a payment method, but the usage from this guide will not exceeed the free tier, and thus no actual charges should occur.
+3. A Laravel application running on the Ubuntu server (only if you want to collect Laravel logs).
+
 ## Introduction
 
 The goal of this document is to guide the reader through the process of setting up Amazon Cloudwatch to aggregate
@@ -49,7 +55,21 @@ going to focus on a few important log files for this stack:
 
 1. Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 2. In the navigation pane, choose Users, and then choose Add user.
-<img src="images/iam.users.png" width="500"/>
+<br><img src="images/iam.users.png" width="600"/>
+<br><img src="images/iam.add.user.png" width="600"/>
+3. Enter the user name for the new user.
+4. For Access type, select Programmatic access, and then click the "Next: Permissions" button.
+<br><img src="images/iam.set.user.png" width="600"/>
+5. For Set permissions, choose Attach existing policies directly.
+6. In the list of policies, select the check box next to CloudWatchAgentServerPolicy. If necessary, use the search box to find the policy.
+7. Click the "Next: Tags" button.
+<br><img src="images/iam.set.policy.png" width="600"/>
+8. No need to set any tags (you can if you want to). Click the "Next: Review"
+9. Confirm that the correct policies are listed, and then click the "Create user" button.
+<br><img src="images/iam.confirm.png" width="600"/>
+10. If your user was successfully created, click the "Download .csv" button to download your credentials. You'll need them for the next sections.
+<br>**Important:** this is the only opportunity you'll have to download these credentials, so don't skip this step. If for some reason you do lose them however, you can always go back and create new permissions for this user.
+<br><img src="images/iam.download.png" width="600"/>
 
 ## Install and Configure the CloudWatch Agent on Ubuntu 18.04
 
