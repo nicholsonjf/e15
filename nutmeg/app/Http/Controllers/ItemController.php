@@ -15,6 +15,17 @@ use Illuminate\Validation\ValidationException;
 class ItemController extends Controller
 {
     /**
+     * Returns the Department the Item belongs to.
+     *
+     * @return 'App\Department'
+     */
+    public function department()
+    {
+        return $this->belongsTo('App\Department');
+    }
+
+
+    /**
      * Import items from csv file.
      *
      * @param string  $file_path Path to the file containing the data.
