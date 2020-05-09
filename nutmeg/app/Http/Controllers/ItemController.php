@@ -43,22 +43,10 @@ class ItemController extends Controller
                 ]
             );
             if ($validator->fails()) {
-                throw new Exception('nope');
+                throw new Exception('Nutmeg: Validation failed');
                 //throw new ValidationException($validator);
             }
         }
-        DB::beginTransaction();
-        try {
-            foreach ($items_assoc as $item_validated) {
-                $item = new Item;
-                $item->name = $item_validated['name'];
-                $item->save();
-            }
-        } catch(\Exception $e) {
-            DB::rollback();
-            throw $e;
-        }
-        DB::commit();
-        return "Successfully inserted " . strval(count($items_assoc)) . " items.";
+        return $items_assoc;
     }
 }
