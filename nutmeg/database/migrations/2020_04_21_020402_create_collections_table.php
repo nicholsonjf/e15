@@ -17,7 +17,6 @@ class CreateCollectionsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name')->unique();
-            $table->string('recipe');
         });
     }
 
