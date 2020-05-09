@@ -11,16 +11,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item">
-                @if(!Auth::user())
-                    <a href='/login' class="nav-link">Login</a>
-                @else
-                    <form method='POST' id='logout' action='/logout'>
-                        {{ csrf_field() }}
-                        <a href='#' class="nav-link" onClick='document.getElementById("logout").submit();'>Logout</a>
-                    </form>
-                @endif
-            </li>
         </ul>
+        <div class='navbar-nav'>
+            @if(!Auth::user())
+                <a href='/login' class="nav-item nav-link">Login</a>
+            @else
+                <form class="form-inline" method='POST' id='logout' action='/logout'>
+                    {{ csrf_field() }}
+                    <a href='#' class="nav-item nav-link" onClick='document.getElementById("logout").submit();'>Logout</a>
+                </form>
+            @endif
+        </div>
     </div>
 </nav>
