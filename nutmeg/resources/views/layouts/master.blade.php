@@ -14,10 +14,6 @@
             <div class="col-12 col-md-3 col-xl-2 bd-sidebar"></div>
             <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
                 @include('includes/nav')
-                <header class='pt-4'>
-                    <a href='/'><img src='/images/empty-recipe.jpg' id='logo' alt='nutmeg logo' class='img-fluid rounded-sm'></a>
-                </header>
-
                 <section>
                     @yield('content')
                 </section>
