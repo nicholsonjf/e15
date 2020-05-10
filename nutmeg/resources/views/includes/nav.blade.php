@@ -20,7 +20,9 @@
             @else
                 <form class="form-inline" method='POST' id='logout' action='/logout'>
                     {{ csrf_field() }}
-                    <a href='#' class="nav-item nav-link" onClick='document.getElementById("logout").submit();'>Logout</a>
+                    <a href='#' class="nav-item nav-link" onClick='document.getElementById("logout").submit();'>
+                        Logout {{ $user->name }}
+                    </a>
                 </form>
             @endif
         </div>
