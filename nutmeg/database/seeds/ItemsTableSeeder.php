@@ -20,8 +20,8 @@ class ItemsTableSeeder extends Seeder
         $department_keys = $departments->modelKeys();
         foreach ($items as $itemData) {
             $item = new Item();
-            $item->created_at = Carbon\Carbon::now()->subDays($count)->toDateTimeString();
-            $item->updated_at = Carbon\Carbon::now()->subDays($count)->toDateTimeString();
+            $item->created_at = Carbon\Carbon::now()->toDateTimeString();
+            $item->updated_at = Carbon\Carbon::now()->toDateTimeString();
             $item->name = $itemData['name'];
             $item->department_id = $department_keys[rand(0, count($department_keys) - 1)];
             $item->save();

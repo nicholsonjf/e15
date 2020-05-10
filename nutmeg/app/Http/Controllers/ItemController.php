@@ -24,6 +24,16 @@ class ItemController extends Controller
         return $this->belongsTo('App\Department');
     }
 
+    /**
+     * Returns the collections an item belongs to.
+     *
+     * @return Collection
+     */
+    public function collections()
+    {
+        return $this->belongsToMany('App\Collections')
+            ->withTimestamps();
+    }
 
     /**
      * Import items from csv file.
