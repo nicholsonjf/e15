@@ -13,7 +13,7 @@ class RenameListsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::rename('lists', 'shopping_lists');
     }
 
     /**
@@ -23,6 +23,6 @@ class RenameListsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::rename('shopping_lists', 'lists');
     }
 }

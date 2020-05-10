@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use App\Collection;
 
+/**
+ * CollectionsTableSeeder class.
+ */
 class CollectionsTableSeeder extends Seeder
 {
     /**

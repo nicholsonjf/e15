@@ -17,8 +17,6 @@ class CreateListsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->integer('listable_id');
-            $table->string('listable_type');
         });
     }
 

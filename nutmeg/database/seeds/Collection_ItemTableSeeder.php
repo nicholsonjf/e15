@@ -5,6 +5,9 @@ use App\Item;
 use App\Collection;
 use App\Department;
 
+/**
+ * Collection_ItemTable Seeder Class.
+ */
 class Collection_ItemTableSeeder extends Seeder
 {
     /**
@@ -15,12 +18,12 @@ class Collection_ItemTableSeeder extends Seeder
     public function run()
     {
         $crepes = array(
-            'name' => 'Carbonara',
+            'name' => 'Apple Crepes',
             'items' => array('Eggs', 'Flour', 'Apples', 'Butter', 'Sugar', 'Salt', 'Milk', 'Canola Oil'),
         );
 
         $carbonara = array(
-            'name' => 'Carbonara',
+            'name' => 'Pasta Carbonara',
             'items' => array('Salt', 'Guanciale', 'Parmesan Cheese', 'Eggs', 'Black Peppercorns', 'Olive Oil', 'Spaghetti'),
         );
         $departments = App\Department::all();

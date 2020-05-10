@@ -4,12 +4,12 @@ use Illuminate\Database\Seeder;
 use App\Item;
 use App\Department;
 use App\Collection;
-use App\List;
+use App\ShoppingList;
 
 /**
- * ListsTableSeeder class.
+ * ShoppingListsTableSeeder class.
  */
-class ListsTableSeeder extends Seeder
+class ShoppingListsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -32,7 +32,7 @@ class ListsTableSeeder extends Seeder
         $departments = Department::all();
         $department_keys = $departments->modelKeys();
         foreach (array($shopping_list1, $shopping_list2) as $list_arr) {
-            $list = List::firstOrCreate(['name' => $list_arr['name']]);
+            $list = ShoppingList::firstOrCreate(['name' => $list_arr['name']]);
             foreach ($list_arr['items'] as $list_item) {
                 $department_id = $department_keys[rand(0, count($department_keys) - 1)];
                 $item = Item::firstOrCreate(['name' => $list_item], ['department_id' => $department_id]);
