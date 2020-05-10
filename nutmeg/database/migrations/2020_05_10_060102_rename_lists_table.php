@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListsTable extends Migration
+class RenameListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,7 @@ class CreateListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lists', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('name');
-            $table->integer('listable_id');
-            $table->string('listable_type');
-        });
+        //
     }
 
     /**
@@ -29,6 +23,6 @@ class CreateListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lists');
+        //
     }
 }

@@ -6,10 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Collection extends Model
 {
+
     /**
-     * Gets Items belonging to a Collection.
-     *
-     * @return Collection
+     * Get all of the Collection's Lists.
+     */
+    public function lists()
+    {
+        return $this->belongsToMany('App\List')
+            ->withTimestamps();
+    }
+
+    /**
+     * Get all of the Collection's Items.
      */
     public function items()
     {

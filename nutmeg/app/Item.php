@@ -14,4 +14,36 @@ class Item extends Model
     protected $attributes = [
         'department_id' => null,
     ];
+
+
+    /**
+     * Get all of the Items's Lists.
+     */
+    public function lists()
+    {
+        return $this->belongsToMany('App\List')
+            ->withTimestamps();
+    }
+
+    /**
+     * Returns the Department the Item belongs to.
+     *
+     * @return 'App\Department'
+     */
+    public function department()
+    {
+        return $this->belongsTo('App\Department')
+            ->withTimestamps();
+    }
+
+    /**
+     * Returns the collections an item belongs to.
+     *
+     * @return Collection
+     */
+    public function collections()
+    {
+        return $this->belongsToMany('App\Collections')
+            ->withTimestamps();
+    }
 }

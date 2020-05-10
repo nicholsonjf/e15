@@ -4,36 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Item;
 use Storage;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
+//use Illuminate\Validation\ValidationException;
 
 /**
  * ItemController class
  */
 class ItemController extends Controller
 {
-    /**
-     * Returns the Department the Item belongs to.
-     *
-     * @return 'App\Department'
-     */
-    public function department()
-    {
-        return $this->belongsTo('App\Department');
-    }
-
-    /**
-     * Returns the collections an item belongs to.
-     *
-     * @return Collection
-     */
-    public function collections()
-    {
-        return $this->belongsToMany('App\Collections')
-            ->withTimestamps();
-    }
 
     /**
      * Import items from csv file.
