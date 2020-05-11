@@ -2,30 +2,34 @@
 
 @section('content')
 
-    <h1>Login</h1>
+    <div class="text-center">
 
-    Don’t have an account? <a href='/register'>Register here...</a>
+        <form class='form-signin' method='POST' action='{{ route('login') }}'>
 
-    <form method='POST' action='{{ route('login') }}'>
+            {{ csrf_field() }}
+            <img class="mb-4" src="/images/nutmeg-icon.jpg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <div class="mb-3">Don’t have an account? <a href='/register'>Register here...</a></div>
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" value='{{ old('email') }}'
+                placeholder="Email" required autofocus>
+            @include('includes.error-field', ['fieldName' => 'email'])
 
-        {{ csrf_field() }}
+            <label for="password" class="sr-only">Password</label>
+            <input name="password" type="password" id="password" class="form-control" placeholder="Password" required>
+            @include('includes.error-field', ['fieldName' => 'password'])
 
-        <label for='email'>E-Mail Address</label>
-        <input id='email' type='email' name='email' value='{{ old('email') }}' required autofocus>
-        @include('includes.error-field', ['fieldName' => 'email'])
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember me
+                </label>
+            </div>
 
-        <label for='password'>Password</label>
-        <input id='password' type='password' name='password' required>
-        @include('includes.error-field', ['fieldName' => 'password'])
+            <button type='submit' class="btn btn-lg btn-primary btn-block">Login</button>
 
-        <label>
-            <input type='checkbox' name='remember' {{ old('remember') ? 'checked' : '' }}> Remember Me
-        </label>
+            <a class='btn btn-link' href='{{ route('password.request') }}'>Forgot Your Password?</a>
 
-        <button type='submit' class='btn btn-primary'>Login</button>
-
-        <a class='btn btn-link' href='{{ route('password.request') }}'>Forgot Your Password?</a>
-
-    </form>
+        </form>
+    </div>
 
 @endsection

@@ -9,19 +9,9 @@
     @yield('head')
 </head>
 <body>
-    <div class='container-fluid'>
-        <div class="row flex-xl-nowrap">
-            <div class="col-12 col-md-3 col-xl-2 bd-sidebar"></div>
-            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-                @include('includes/nav')
-                <section>
-                    @yield('content')
-                </section>
-                <footer>
-                    &copy; {{ date('Y') }}
-                </footer>
-            </main>
-        </div>
+    @include('includes/nav')
+    <div class='container-fluid h-100'>
+        @yield('content')
     </div>
 </body>
 </html>
