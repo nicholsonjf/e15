@@ -7,7 +7,7 @@
         @if(Auth::user())
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="/shopping-lists">Shopping Lists</a>
+                <a class="nav-link" dusk="nav-shopping-lists" href="/shopping-lists">Shopping Lists</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/collections">Collections</a>
@@ -23,7 +23,7 @@
             @else
                 <form class="form-inline" method='POST' id='logout' action='/logout'>
                     {{ csrf_field() }}
-                    <a href='#' class="nav-item nav-link" onClick='document.getElementById("logout").submit();'>
+                    <a href='#' class="nav-item nav-link" dusk="logout-btn" onClick='document.getElementById("logout").submit();'>
                         Logout {{ $user->name }}
                     </a>
                 </form>

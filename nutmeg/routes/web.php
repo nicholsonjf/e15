@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/shopping-lists/{slug}', 'ShoppingListController@view');
 
     # View all ShoppingLists
-    Route::get('/shopping-lists/{slug}', 'ShoppingListController@view');
+    Route::get('/shopping-lists', 'ShoppingListController@view');
 
     # Create a ShoppingList
     Route::get('/shopping-lists/create', 'ShoppingListController@create');
