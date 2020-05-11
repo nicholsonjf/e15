@@ -15,6 +15,9 @@
         </ul>
         @endif
         <div class='navbar-nav ml-auto'>
+            <a href='/support' class="nav-item nav-link">Support</a>
+        </div>
+        <div class='navbar-nav'>
             @if(!Auth::user())
                 <a href='/login' class="nav-item nav-link">Login</a>
             @else

@@ -106,4 +106,6 @@ return [
         ],
     ],
 
+    'supportEmail' => 'windyfens@gmail.com',
+
 ];
