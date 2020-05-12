@@ -15,8 +15,8 @@
         </a>
         @endforeach
         @foreach($collections as $collection)
-        <a class='shopping-list-collection' href='/collections/{{ $collection->id }}'>
-            <h3>{{ $collection->name }}</h3>
+        <a class='shopping-list-collection text-success' href='/collections/{{ $collection->id }}'>
+            <h3>+{{ $collection->name }}</h3>
         </a>
         @endforeach
     </div>
