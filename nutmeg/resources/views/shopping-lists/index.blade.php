@@ -6,6 +6,9 @@
 
 @section('content')
     <h1>Shopping Lists</h1>
+    <a class="text-decoration-none text-success" href="/shopping-lists/create">
+        <h6>+create new shopping list</h6>
+    </a>
     @if(count($shopping_lists) == 0)
         No shopping lists have been added yet...
     @else

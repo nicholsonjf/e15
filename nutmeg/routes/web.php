@@ -25,6 +25,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/**
+ * Protected routes.
+ */
 Route::group(['middleware' => 'auth'], function () {
 
     /*
@@ -34,12 +37,12 @@ Route::group(['middleware' => 'auth'], function () {
     # View all ShoppingLists
     Route::get('/shopping-lists', 'ShoppingListController@index');
 
-    # View a ShoppingList
-    Route::get('/shopping-lists/{slug?}', 'ShoppingListController@show');
-
     # Create a ShoppingList
     Route::get('/shopping-lists/create', 'ShoppingListController@create');
     Route::post('/shopping-lists', 'ShoppingListController@store');
+
+    # View a ShoppingList
+    Route::get('/shopping-lists/{slug?}', 'ShoppingListController@show');
 
     # Edit a ShoppingList
     Route::get('/shopping-lists/{slug}/edit', 'ShoppingListController@edit');

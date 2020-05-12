@@ -11,6 +11,11 @@
 </head>
 <body>
     @include('includes/nav')
+    @if(session('flash-alert'))
+    <div class='alert alert-success'>
+        {{ session('flash-alert') }}
+    </div>
+    @endif
     <div class='container-fluid h-100'>
         @yield('content')
     </div>

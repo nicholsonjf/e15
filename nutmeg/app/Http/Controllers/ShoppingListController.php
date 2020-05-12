@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\ShoppingList;
+use App\Department;
+use Illuminate\Http\Request;
 
 /**
  * ShoppingList Controller Class.
@@ -38,5 +40,37 @@ class ShoppingListController extends Controller
             'collections' => $shopping_list->collections,
             'slug' => $slug,
         ]);
+    }
+
+
+    /**
+     * GET /shopping-lists/create
+     * Create a new shopping-list
+     */
+    public function create()
+    {
+        $departments = Department::orderBy('name')->get();
+
+        return view('shopping-lists.create')->with([
+            'departments' => $departments,
+        ]);
+    }
+
+
+    /**
+     * POST /shopping-lists
+     * Store a new shopping-list
+     */
+    public function store(Request $request)
+    {
+        $newShoppingList = new ShoppingList();
+        $params = $request->all();
+        $newShoppingList->name = $params['name'];
+        $saveResult = $newShoppingList->save();
+        if (true === $saveResult) {
+            return redirect('/shopping-lists/' . $newShoppingList->id)
+                ->with(['flash-alert' => 'Your shopping list ' . $params['name'] . ' was added.']);
+        }
+
     }
 }
