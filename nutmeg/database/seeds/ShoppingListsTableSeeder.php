@@ -36,7 +36,7 @@ class ShoppingListsTableSeeder extends Seeder
             foreach ($list_arr['items'] as $list_item) {
                 $department_id = $department_keys[rand(0, count($department_keys) - 1)];
                 $item = Item::firstOrCreate(['name' => $list_item], ['department_id' => $department_id]);
-                $list->items()->save($item);
+                $list->items()->save($item, ['checked' => false]);
             }
             foreach ($list_arr['collections'] as $list_collection) {
                 $collection = Collection::firstOrCreate(['name' => $list_collection]);

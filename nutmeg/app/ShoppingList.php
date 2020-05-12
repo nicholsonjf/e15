@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShoppingList extends Model
 {
+
     /**
      * Get the Items the ShoppingList belongs to.
      */
     public function items()
     {
-        return $this->belongsToMany('App\Item')
+        return $this->belongsToMany('App\Item')->withPivot('checked')
             ->withTimestamps();
     }
 

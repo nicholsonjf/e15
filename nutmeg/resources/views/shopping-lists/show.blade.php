@@ -15,9 +15,17 @@
         </a>
         @endforeach
         @foreach($collections as $collection)
-        <a class='shopping-list-collection text-success' href='/collections/{{ $collection->id }}'>
+        <a class='shopping-list-collection text-success' data-toggle="collapse" href="#collection-item{{$collection->id}}"
+            aria-expanded="false" aria-controls="#collection-item{{$collection->id}}">
             <h3>+{{ $collection->name }}</h3>
         </a>
+        <div class="collapse" id="collection-item{{$collection->id}}">
+            @foreach($collection->items as $item)
+            <a class='collection-item' href='/items/{{ $item->id }}'>
+                <h3 class="pl-4">{{ $item->name }}</h3>
+            </a>
+            @endforeach
+        <div>
         @endforeach
     </div>
     @endif

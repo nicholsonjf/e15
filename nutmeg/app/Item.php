@@ -21,7 +21,7 @@ class Item extends Model
      */
     public function lists()
     {
-        return $this->belongsToMany('App\List')
+        return $this->belongsToMany('App\ShoppingList')->withPivot('checked')
             ->withTimestamps();
     }
 
@@ -32,7 +32,8 @@ class Item extends Model
      */
     public function department()
     {
-        return $this->belongsTo('App\Department');
+        return $this->belongsTo('App\Department')
+            ->withTimestamps();
     }
 
     /**
