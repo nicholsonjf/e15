@@ -6,13 +6,42 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Storage;
 use Illuminate\Support\Facades\Validator;
-//use Illuminate\Validation\ValidationException;
+use App\Item;
 
 /**
  * ItemController class
  */
 class ItemController extends Controller
 {
+
+    /**
+     * GET /items
+     * Show all the items in the app.
+     */
+    public function index()
+    {
+        $items = Item::orderBy('name')->get();
+
+        return view('items.index')->with([
+            'items' => $items,
+        ]);
+    }
+
+
+    /**
+     * GET /items/{slug?}
+     * Show the details for an individual item
+     */
+    public function show($slug)
+    {
+        $item = Item::where('id', '=', $slug)->first();
+
+        return view('items.show')->with([
+            'item' => $item,
+            'department' => $item->department,
+            'slug' => $slug,
+        ]);
+    }
 
     /**
      * Import items from csv file.

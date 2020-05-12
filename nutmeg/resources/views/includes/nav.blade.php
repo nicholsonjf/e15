@@ -10,7 +10,13 @@
                 <a class="nav-link" dusk="nav-shopping-lists" href="/shopping-lists">Shopping Lists</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/items">Items</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/collections">Collections</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/departments">Departments</a>
             </li>
         </ul>
         @endif

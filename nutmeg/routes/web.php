@@ -31,11 +31,11 @@ Route::group(['middleware' => 'auth'], function () {
     * ShoppingList routes...
     */
 
-    # View a ShoppingList
-    Route::get('/shopping-lists/{slug}', 'ShoppingListController@view');
-
     # View all ShoppingLists
-    Route::get('/shopping-lists', 'ShoppingListController@view');
+    Route::get('/shopping-lists', 'ShoppingListController@index');
+
+    # View a ShoppingList
+    Route::get('/shopping-lists/{slug?}', 'ShoppingListController@show');
 
     # Create a ShoppingList
     Route::get('/shopping-lists/create', 'ShoppingListController@create');
@@ -49,11 +49,11 @@ Route::group(['middleware' => 'auth'], function () {
     * Collection routes...
     */
 
-    # View a Collection
-    Route::get('/collections/{slug}', 'CollectionController@view');
-
     # View all Collections
-    Route::get('/collections/{slug}', 'CollectionController@view');
+    Route::get('/collections', 'CollectionController@index');
+
+    # View a Collection
+    Route::get('/collections/{slug}', 'CollectionController@show');
 
     # Create a Collection
     Route::get('/collections/create', 'CollectionController@create');
@@ -67,11 +67,11 @@ Route::group(['middleware' => 'auth'], function () {
     * Item routes...
     */
 
-    # View an Item
-    Route::get('/items/{slug}', 'ItemController@view');
+    # View all Item
+    Route::get('/items', 'ItemController@index');
 
-    # View all Items
-    Route::get('/items/{slug}', 'ItemController@view');
+    # View an Item
+    Route::get('/items/{slug}', 'ItemController@show');
 
     # Create an Item
     Route::get('/items/create', 'ItemController@create');
@@ -80,4 +80,22 @@ Route::group(['middleware' => 'auth'], function () {
     # Edit an Item
     Route::get('/items/{slug}/edit', 'ItemController@edit');
     Route::put('/items/{slug}', 'ItemController@update');
+
+    /*
+    * Department routes...
+    */
+
+    # View all Department
+    Route::get('/departments', 'DepartmentController@index');
+
+    # View a Department
+    Route::get('/departments/{slug}', 'DepartmentController@show');
+
+    # Create a Department
+    Route::get('/department/create', 'DepartmentController@create');
+    Route::post('/departments', 'DepartmentController@store');
+
+    # Edit a Department
+    Route::get('/departments/{slug}/edit', 'DepartmentController@edit');
+    Route::put('/departments/{slug}', 'DepartmentController@update');
 });
