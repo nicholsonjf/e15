@@ -9,10 +9,11 @@
         Item not found. <a href='/items'>Check out the other items available...</a>
     @else
     <h1 dusk='item-name-heading'>{{ $item->name }}</h1>
-        <h3>Department: </h3>
-        <a class='item-department' href='/departments/{{ $department->id }}'>
-            <h3>{{ $department->name }}</h3>
-        </a>
-    </div>
+            <h3>
+                <span class="item-label">Department:</span>
+                <a class='item-department' href='/departments/{{ $department->id }}'>
+                    {{ $department->name }}
+                </a>
+            </h3>
     @endif
 @endsection
