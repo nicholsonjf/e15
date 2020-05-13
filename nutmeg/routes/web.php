@@ -92,7 +92,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/departments', 'DepartmentController@index');
 
     # Create a Department
-    Route::get('/department/create', 'DepartmentController@create');
+    Route::get('/departments/create', 'DepartmentController@create');
     Route::post('/departments', 'DepartmentController@store');
 
     # View a Department
