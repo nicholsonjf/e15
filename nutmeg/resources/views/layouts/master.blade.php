@@ -11,6 +11,7 @@
 </head>
 <body>
     @include('includes/nav')
+    @include('includes/error-field')
     @if(session('flash-alert'))
     <div class='alert alert-success'>
         {{ session('flash-alert') }}

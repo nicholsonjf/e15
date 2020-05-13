@@ -1,22 +1,10 @@
 @extends('layouts.master')
 
 @section('title')
-Create a New Shopping List
+Create a Item
 @endsection
 
 @section('content')
-@if(count($errors) > 0)
-    <div class='row mr-4'>
-        <div class='col-10 pl-3 ml-3 mt-4 alert alert-danger'>
-            ATTENTION:
-            <ul class='mb-0'>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
-@endif
 
 <form action='/items' method='POST'>
     @csrf
@@ -42,5 +30,6 @@ Create a New Shopping List
         </div>
     </div>
 </form>
+
 @endsection
 

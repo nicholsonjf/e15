@@ -1,3 +1,7 @@
-@if($errors->get($fieldName))
-    <div dusk='error-field-{{ $fieldName }}' class='alert alert-danger error'>{{ $errors->first($fieldName) }}</div>
+@if(count($errors) > 0)
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 @endif

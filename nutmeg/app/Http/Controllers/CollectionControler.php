@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Collection;
+use Illuminate\Http\Request;
 
 /**
  * Collection Class.
@@ -37,5 +38,33 @@ class CollectionController extends Controller
             'items' => $collection->items,
             'slug' => $slug,
         ]);
+    }
+
+
+    /**
+     * GET /collections/create
+     * Create a new collection
+     */
+    public function create()
+    {
+        return view('collections.create');
+    }
+
+
+    /**
+     * POST /collections
+     * Store a new collection
+     */
+    public function store(Request $request)
+    {
+        $newCollection = new Collection();
+        $params = $request->all();
+        $newCollection->name = $params['name'];
+        $saveResult = $newCollection->save();
+        if (true === $saveResult) {
+            return redirect('/collections/' . $newCollection->id)
+                ->with(['flash-alert' => 'Your collection ' . $params['name'] . ' was added.']);
+        }
+
     }
 }

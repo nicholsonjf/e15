@@ -55,12 +55,12 @@ Route::group(['middleware' => 'auth'], function () {
     # View all Collections
     Route::get('/collections', 'CollectionController@index');
 
-    # View a Collection
-    Route::get('/collections/{slug}', 'CollectionController@show');
-
     # Create a Collection
     Route::get('/collections/create', 'CollectionController@create');
     Route::post('/collections', 'CollectionController@store');
+
+    # View a Collection
+    Route::get('/collections/{slug}', 'CollectionController@show');
 
     # Edit a Collection
     Route::get('/collections/{slug}/edit', 'CollectionController@edit');
@@ -91,12 +91,12 @@ Route::group(['middleware' => 'auth'], function () {
     # View all Department
     Route::get('/departments', 'DepartmentController@index');
 
-    # View a Department
-    Route::get('/departments/{slug}', 'DepartmentController@show');
-
     # Create a Department
     Route::get('/department/create', 'DepartmentController@create');
     Route::post('/departments', 'DepartmentController@store');
+
+    # View a Department
+    Route::get('/departments/{slug}', 'DepartmentController@show');
 
     # Edit a Department
     Route::get('/departments/{slug}/edit', 'DepartmentController@edit');

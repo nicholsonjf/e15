@@ -6,6 +6,9 @@
 
 @section('content')
     <h1>Departments</h1>
+    <a class="text-decoration-none text-success" href="/departments/create">
+        <h6>+add a new department</h6>
+    </a>
     @if(count($departments) == 0)
         No departments have been added yet...
     @else

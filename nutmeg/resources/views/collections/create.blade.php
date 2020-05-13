@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('title')
-Create a New Shopping List
+Create a new Collection
 @endsection
 
 @section('content')
 
-<form action='/shopping-lists' method='POST'>
+<form action='/collections' method='POST'>
     @csrf
     <div class='row pt-4 pb-2'>
         <div class='col-3'>
@@ -20,4 +20,3 @@ Create a New Shopping List
 </form>
 
 @endsection
-

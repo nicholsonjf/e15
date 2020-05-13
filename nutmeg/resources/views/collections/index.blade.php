@@ -6,6 +6,9 @@
 
 @section('content')
     <h1>Collections</h1>
+    <a class="text-decoration-none text-success" href="/collections/create">
+        <h6>+add a new collection</h6>
+    </a>
     @if(count($collections) == 0)
         No collections have been added yet...
     @else

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Department;
+use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
@@ -34,5 +35,33 @@ class DepartmentController extends Controller
             'items' => $department->items,
             'slug' => $slug,
         ]);
+    }
+
+
+    /**
+     * GET /departments/create
+     * Create a new department
+     */
+    public function create()
+    {
+        return view('departments.create');
+    }
+
+
+    /**
+     * POST /departments
+     * Store a new department
+     */
+    public function store(Request $request)
+    {
+        $newDepartment = new Department();
+        $params = $request->all();
+        $newDepartment->name = $params['name'];
+        $saveResult = $newDepartment->save();
+        if (true === $saveResult) {
+            return redirect('/departments/' . $newDepartment->id)
+                ->with(['flash-alert' => 'Your department ' . $params['name'] . ' was added.']);
+        }
+
     }
 }
