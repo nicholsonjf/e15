@@ -61,6 +61,10 @@ class ShoppingListController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|alpha_num|between:2,100'
+        ]);
+
         $newShoppingList = new ShoppingList();
         $params = $request->all();
         $newShoppingList->name = $params['name'];
@@ -79,6 +83,10 @@ class ShoppingListController extends Controller
      */
     public function add_item($slug, Request $request)
     {
+        $request->validate([
+            'item' => 'required|numeric'
+        ]);
+
         $shopping_list = ShoppingList::where('id', '=', $slug)->first();
         $params = $request->all();
         $item = Item::where('id', '=', $params['item'])->first();

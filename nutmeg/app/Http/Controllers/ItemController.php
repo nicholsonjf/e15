@@ -66,6 +66,11 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|alpha_num|between:2,100',
+            'department' => 'required',
+        ]);
+
         $newItem = new Item();
         $params = $request->all();
         $newItem->name = $params['name'];

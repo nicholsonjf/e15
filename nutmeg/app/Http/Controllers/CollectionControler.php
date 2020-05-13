@@ -57,6 +57,10 @@ class CollectionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|alpha_num|between:2,100'
+        ]);
+
         $newCollection = new Collection();
         $params = $request->all();
         $newCollection->name = $params['name'];

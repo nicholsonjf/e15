@@ -54,6 +54,10 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|alpha_num|between:2,100'
+        ]);
+
         $newDepartment = new Department();
         $params = $request->all();
         $newDepartment->name = $params['name'];
