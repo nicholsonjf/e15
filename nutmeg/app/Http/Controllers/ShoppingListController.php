@@ -49,11 +49,7 @@ class ShoppingListController extends Controller
      */
     public function create()
     {
-        $departments = Department::orderBy('name')->get();
-
-        return view('shopping-lists.create')->with([
-            'departments' => $departments,
-        ]);
+        return view('shopping-lists.create');
     }
 
 

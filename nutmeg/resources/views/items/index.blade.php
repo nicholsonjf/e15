@@ -6,6 +6,9 @@
 
 @section('content')
     <h1>Items</h1>
+    <a class="text-decoration-none text-success" href="/items/create">
+        <h6>+add a new item</h6>
+    </a>
     @if(count($items) == 0)
         No items have been added yet...
     @else

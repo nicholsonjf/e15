@@ -73,12 +73,12 @@ Route::group(['middleware' => 'auth'], function () {
     # View all Item
     Route::get('/items', 'ItemController@index');
 
-    # View an Item
-    Route::get('/items/{slug}', 'ItemController@show');
-
     # Create an Item
     Route::get('/items/create', 'ItemController@create');
     Route::post('/items', 'ItemController@store');
+
+    # View an Item
+    Route::get('/items/{slug}', 'ItemController@show');
 
     # Edit an Item
     Route::get('/items/{slug}/edit', 'ItemController@edit');

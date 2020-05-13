@@ -32,8 +32,7 @@ class Item extends Model
      */
     public function department()
     {
-        return $this->belongsTo('App\Department')
-            ->withTimestamps();
+        return $this->belongsTo('App\Department');
     }
 
     /**

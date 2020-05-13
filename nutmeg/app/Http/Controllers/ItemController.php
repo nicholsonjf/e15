@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Item;
+use App\Department;
+use Illuminate\Http\Request;
 
 /**
  * ItemController class
@@ -42,6 +44,40 @@ class ItemController extends Controller
             'slug' => $slug,
         ]);
     }
+
+
+    /**
+     * GET /items/create
+     * Create a new item
+     */
+    public function create()
+    {
+        $departments = Department::orderBy('name')->get();
+
+        return view('items.create')->with([
+            'departments' => $departments,
+        ]);
+    }
+
+
+    /**
+     * POST /items
+     * Store a new item
+     */
+    public function store(Request $request)
+    {
+        $newItem = new Item();
+        $params = $request->all();
+        $newItem->name = $params['name'];
+        $newItem->department_id = $params['department'];
+        $saveResult = $newItem->save();
+        if (true === $saveResult) {
+            return redirect('/items/' . $newItem->id)
+                ->with(['flash-alert' => 'Your item ' . $params['name'] . ' was added.']);
+        }
+
+    }
+
 
     /**
      * Import items from csv file.
