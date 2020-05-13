@@ -14,7 +14,7 @@ Create a New Shopping List
             <div class='form-group'>
                 <input type="text" name="name" class="form-control" id="shopping-list-name" placeholder="Enter name">
             </div>
-            <button type='submit' class='btn btn-primary'>Submit</button>
+            <button dusk="submit-button" type='submit' class='btn btn-primary'>Submit</button>
         </div>
     </div>
 </form>

@@ -9,6 +9,7 @@ use App\User;
 
 class AuthTest extends DuskTestCase
 {
+    use DatabaseMigrations;
     /**
      * Test the logged in users name appears in the logout button.
      *
@@ -16,6 +17,7 @@ class AuthTest extends DuskTestCase
      */
     public function testLogoutBtnHasUserName()
     {
+        $this->seed();
         $this->browse(function ($browser) {
             $user = User::find(1);
             $browser->loginAs($user)
@@ -32,6 +34,7 @@ class AuthTest extends DuskTestCase
      */
     public function testNavContainsShoppingLists()
     {
+        $this->seed();
         $this->browse(function ($browser) {
             $user = User::find(1);
             $browser->loginAs($user)
