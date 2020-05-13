@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/shopping-lists/{slug?}', 'ShoppingListController@show');
 
     # Edit a ShoppingList
-    Route::get('/shopping-lists/{slug}/edit', 'ShoppingListController@edit');
+    Route::post('/shopping-lists/{slug}/add-item', 'ShoppingListController@add_item');
     Route::put('/shopping-lists/{slug}', 'ShoppingListController@update');
 
     /*

@@ -9,12 +9,27 @@
         Shopping list not found. <a href='/shopping-lists'>Check out the other shopping lists available...</a>
     @else
     <h1 dusk='shopping-list-name-heading'>{{ $shopping_list->name }}</h1>
-        <a class="text-decoration-none text-success" href="/shopping-lists/create">
-            <h6>+add item to shopping list</h6>
-        </a>
-        @foreach($items as $item)
-        <a class='shopping-list-item' href='/items/{{ $item->id }}'>
-            <h3>{{ $item->name }}</h3>
+        <form action='/shopping-lists/{{ $shopping_list->id }}/add-item' method='POST'>
+        @csrf
+            <div class='form-inline mb-4'>
+                <div class='form-group'>
+                    <select name='item' id='item-select' class='form-control'>
+                        <option value=''>--Add an item to your list--</option>
+                        @foreach($items as $item)
+                            <option value='{{ $item->id }}'>
+                                {{ $item->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class='form-group'>
+                    <button type="submit" class="btn btn-primary ml-3">Add Item</button>
+                </div>
+            </div>
+        </form>
+        @foreach( $shopping_list->items as $shopping_list_item)
+        <a class='shopping-list-item' href='/items/{{ $shopping_list_item->id }}'>
+            <h3>{{ $shopping_list_item->name }}</h3>
         </a>
         @endforeach
         @foreach($collections as $collection)
@@ -23,9 +38,9 @@
             <h3>+{{ $collection->name }}</h3>
         </a>
         <div class="collapse" id="collection-item{{$collection->id}}">
-            @foreach($collection->items as $item)
-            <a class='collection-item' href='/items/{{ $item->id }}'>
-                <h3 class="pl-4">{{ $item->name }}</h3>
+            @foreach($collection->items as $collection_item)
+            <a class='collection-item' href='/items/{{ $collection_item->id }}'>
+                <h3 class="pl-4">{{ $collection_item->name }}</h3>
             </a>
             @endforeach
         <div>
